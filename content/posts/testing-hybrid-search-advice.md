@@ -1,5 +1,5 @@
 ---
-title: I tested the standard hybrid search advice. About half of it held.
+title: Your RAG search may not need a reranker. Here is how I checked mine.
 date: 2026-10-08
 summary: I built a search engine in stages and measured each one on two datasets. Rank fusion did not beat dense retrieval, and neither reranker was worth its cost.
 ---
