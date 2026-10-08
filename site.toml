@@ -14,16 +14,16 @@ url = "https://linkedin.com/in/yash-bitla"
 
 # Three numbers under the introduction.
 [[stats]]
-value = "2M"
-label = "records an hour through the ingestion pipeline I re-architected, up from 90K"
+value = "2+ years"
+label = "building production data and ML systems"
 
 [[stats]]
-value = "<50 ms"
-label = "p99 latency for the inference service I built, at 99.9% uptime"
+value = "3 companies"
+label = "in healthcare, fintech and computer vision"
 
 [[stats]]
-value = "11M+"
-label = "Medicare members whose enrollment data the platform connects to care"
+value = "2 papers"
+label = "published, at IEEE ICIP 2023 and BIC 2024"
 
 [[experience]]
 company = "Age Bold"
