@@ -80,6 +80,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 
 .hero { display: grid; grid-template-columns: 1fr 208px; gap: 3.5rem; align-items: start; }
 .hero p:last-child { margin-bottom: 0; }
+.hero strong { font-weight: 600; color: var(--heading); }
 .eyebrow {
   margin: 0 0 0.6rem;
   font-family: var(--sans);
