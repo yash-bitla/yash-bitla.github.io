@@ -27,6 +27,7 @@ label = "Medicare members whose enrollment data the platform connects to care"
 
 [[experience]]
 company = "Age Bold"
+url = "https://www.agebold.com"
 role = "Software Engineer"
 dates = "Sep 2024 – Present"
 place = "Los Angeles"
@@ -41,6 +42,7 @@ highlights = [
 
 [[experience]]
 company = "Dragonfruit AI"
+url = "https://www.dragonfruit.ai"
 role = "Software Engineer Intern"
 dates = "Mar 2024 – Aug 2024"
 place = "Menlo Park"
@@ -48,6 +50,7 @@ summary = "Improved the alert notification system with Celery and RabbitMQ to pr
 
 [[experience]]
 company = "SoFi (Galileo Financial Technologies)"
+url = "https://www.galileo-ft.com"
 role = "Software Engineer Intern"
 dates = "May 2023 – Aug 2023"
 place = "San Francisco"
@@ -69,11 +72,13 @@ stack = "Python · Numba · FastAPI · React"
 
 [[publications]]
 title = "Monitoring Urban Streets Using Deep Learning with Geo-Referenced Images"
+url = "http://bic-conference.org/2024/02_BIC_2024_Programbook_20240812_7.pdf"
 authors = "Yash Bitla, Harshita Poojary, Seon Ho Kim"
 venue = "8th International Conference on Big Data, IoT, and Cloud Computing (BIC 2024), Hanoi"
 
 [[publications]]
 title = "Object Detection and Counting Challenges in Real Street Monitoring: Case Study of Homeless Encampments"
+url = "https://ieeexplore.ieee.org/abstract/document/10222473"
 authors = "Yash Bitla, Abdullah Alfarrarjeh, Seon Ho Kim, Utkarsh Baranwal"
 venue = "IEEE International Conference on Image Processing (ICIP 2023)"
 

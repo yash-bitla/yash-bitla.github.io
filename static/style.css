@@ -128,6 +128,8 @@ h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
 }
 .timeline .when { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.2rem; }
 .timeline h3 { margin-bottom: 0.1rem; }
+.timeline h3 a { color: var(--text); text-decoration: none; }
+.timeline h3 a:hover { color: var(--accent); text-decoration: underline; }
 .timeline p { margin: 0.5rem 0 0; }
 .timeline p.meta { margin-top: 0; }
 .timeline ul { margin: 0.9rem 0 0; padding-left: 1.1rem; font-size: 0.95em; }
@@ -155,7 +157,9 @@ h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
 .plain { list-style: none; margin: 0; padding: 0; }
 .plain li { margin-bottom: 1.1rem; }
 .plain li:last-child { margin-bottom: 0; }
-.plain strong { font-family: var(--sans); font-size: 0.95rem; }
+.plain strong, .plain .paper { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; }
+.plain .paper { color: var(--text); text-decoration: none; }
+.plain .paper:hover { color: var(--accent); text-decoration: underline; }
 .plain > li > .meta { display: block; margin-top: 0.15rem; line-height: 1.5; }
 .plain.rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 
