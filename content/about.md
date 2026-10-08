@@ -1,5 +1,5 @@
-I'm a **software engineer** who builds **large-scale healthcare systems** and the machine learning inside them. At Age Bold, I own the data platform that connects more than **11 million Medicare members** to preventive care, and I built the real-time ML serving stack that personalizes it.
+I'm a **software engineer** at Age Bold. I build **large-scale data and backend systems**: pipelines that move millions of records, real-time services, and the monitoring that keeps them reliable. My work has spanned healthcare, fintech and computer vision.
 
-I work at the **intersection of AI and software engineering**: production ML, recommendation systems, low-latency inference, and data pipelines that stay correct at scale. What I care about most is turning a model into a product that people depend on.
+Most of what I build sits at the **intersection of AI and software engineering**. I take **machine learning** from model to production: recommendation systems, real-time model serving, and low-latency inference that people depend on every day.
 
 I'm also part of the Integrated Media Systems Center (IMSC) lab at USC, where my **computer vision and AI research** is concentrated on object detection and object tracking in real-world street video. I have a Master's in Computer Science from USC.
