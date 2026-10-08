@@ -1,13 +1,15 @@
 """Build the site into dist/.
 
     python build.py            # build
-    python build.py --serve    # build, then serve at http://localhost:8000
+    python build.py --serve    # build, serve at http://localhost:8000, rebuild on change
     python build.py --drafts   # include posts marked draft: true
 """
 
 import argparse
 import http.server
 import shutil
+import threading
+import time
 import tomllib
 from dataclasses import dataclass
 from datetime import date
@@ -89,6 +91,27 @@ def build(drafts: bool = False) -> None:
     print(f"built {len(posts)} post(s) into {DIST}")
 
 
+def snapshot() -> dict[Path, float]:
+    """Last-modified time of every source file."""
+    sources = [ROOT / "site.toml", *(ROOT / "content").rglob("*"), *(ROOT / "templates").rglob("*"),
+               *(ROOT / "static").rglob("*")]
+    return {p: p.stat().st_mtime for p in sources if p.is_file()}
+
+
+def watch(drafts: bool) -> None:
+    """Rebuild when a source file changes, so a browser refresh shows the edit."""
+    seen = snapshot()
+    while True:
+        time.sleep(1)
+        now = snapshot()
+        if now != seen:
+            seen = now
+            try:
+                build(drafts=drafts)
+            except Exception as error:  # keep serving the last good build
+                print(f"build failed: {error}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--serve", action="store_true")
@@ -96,8 +119,9 @@ def main() -> None:
     args = parser.parse_args()
     build(drafts=args.drafts)
     if args.serve:
+        threading.Thread(target=watch, args=(args.drafts,), daemon=True).start()
         handler = partial(http.server.SimpleHTTPRequestHandler, directory=str(DIST))
-        print("serving at http://localhost:8000")
+        print("serving at http://localhost:8000 (rebuilds when a file changes)")
         http.server.ThreadingHTTPServer(("localhost", 8000), handler).serve_forever()
 
 

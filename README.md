@@ -6,7 +6,7 @@ My personal site. A small static site: Markdown and TOML in, plain HTML out.
 
 ```bash
 python3.12 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-python build.py --serve     # http://localhost:8000
+python build.py --serve     # http://localhost:8000, rebuilds when a file changes
 ```
 
 ## Change it
