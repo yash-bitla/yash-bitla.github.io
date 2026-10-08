@@ -53,8 +53,8 @@ h2 {
 }
 h3 { font-size: 1.15rem; margin: 0 0 0.35rem; color: var(--heading); }
 
-main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
-.meta, .eyebrow, .stats dd, .post-list li, .plain li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+main p, main li, .stats dd { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.meta, .eyebrow, .stats dd.tools, .post-list li, .plain li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 
 .site-header, .site-footer {
   display: flex;
@@ -224,7 +224,7 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .stats { grid-template-columns: 1fr; gap: 1.1rem; }
   .stats { gap: 1.5rem; }
   /* A narrow column leaves wide gaps between words when it is justified. */
-  main p, main li { text-align: left; }
+  main p, main li, .stats dd { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
