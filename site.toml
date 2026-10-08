@@ -62,6 +62,19 @@ dates = "May 2023 – Aug 2023"
 place = "San Francisco"
 summary = "Built an asynchronous monitoring system with Kubernetes and RabbitMQ that captures metrics for a fraud detection service processing 100,000 ACH transactions a day, with no added latency. Also shipped a real-time analytics dashboard on Splunk and DynamoDB."
 
+# Projects, newest first. The home page shows the first 6. With more than 6, the site
+# also builds /projects/ with the full list. Give each one an image in static/img/.
+[[projects]]
+name = "leantrack"
+image = "/img/leantrack-demo.gif"
+image_alt = "Two views of people tracked on a street: boxes lag behind in a blocking loop, and stay on the people with a background detector"
+image_fit = "cover"
+image_ratio = "844 / 262"
+url = "https://github.com/yash-bitla/leantrack"
+summary = "A multi-object tracking runtime that treats the detector as a limited resource. It decides when the detector runs, keeps each track correct between runs, and measures the accuracy cost of each decision."
+result = "On a live stream, a background detector with optical flow cut mean output latency from 101 ms to 5 ms and raised tracking accuracy (HOTA) from 32.9 to 34.5, on MOT17 with a laptop CPU."
+stack = "Python · OpenCV · ONNX Runtime · FastAPI"
+
 [[projects]]
 name = "Hybrid Retrieval Engine"
 image = "/img/scifact-rerank.png"

@@ -145,6 +145,11 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .highlights details p { margin: 0 0 0.9rem 1.8rem; font-size: 0.95em; }
 
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+/* With an odd number of cards, the first one takes the full width, so no card is alone in a row. */
+.projects .project:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
+.more { margin: 1.5rem 0 0; font-family: var(--sans); font-size: 0.9rem; text-align: left; }
+.more a { text-decoration: none; }
+.more a:hover { text-decoration: underline; }
 .project {
   display: flex;
   flex-direction: column;

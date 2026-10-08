@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_project.html" import project_card %}
 {% block content %}
 <section class="hero">
   <div class="hero-text">
@@ -43,20 +44,9 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-    {% for project in site.projects %}
-    <a class="project" href="{{ project.url }}">
-      {% if project.image %}
-      <div class="shot {{ project.image_fit }}"><img src="{{ project.image }}" alt="{{ project.image_alt }}" loading="lazy"></div>
-      {% endif %}
-      <div class="body">
-        <h3>{{ project.name }} <span aria-hidden="true">↗</span></h3>
-        <p>{{ project.summary }}</p>
-        <p class="result">{{ project.result }}</p>
-        <p class="meta">{{ project.stack }}</p>
-      </div>
-    </a>
-    {% endfor %}
+    {% for project in site.projects[:home_projects] %}{{ project_card(project) }}{% endfor %}
   </div>
+  {% if site.projects|length > home_projects %}<p class="more"><a href="/projects/">All {{ site.projects|length }} projects →</a></p>{% endif %}
 </section>
 
 {% if posts %}

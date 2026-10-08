@@ -22,6 +22,7 @@ from markupsafe import Markup
 
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
+HOME_PROJECTS = 6  # the home page shows this many; more than this also builds /projects/
 
 
 @dataclass(frozen=True)
@@ -81,7 +82,9 @@ def build(drafts: bool = False) -> None:
         html = env.get_template(template).render(site=site, posts=posts, **context)
         target.write_text(html, encoding="utf-8")
 
-    render("index.html", "index.html", about=about)
+    render("index.html", "index.html", about=about, home_projects=HOME_PROJECTS)
+    if len(site["projects"]) > HOME_PROJECTS:
+        render("projects.html", "projects/index.html", home_projects=HOME_PROJECTS)
     render("404.html", "404.html")
     if posts:
         render("blog.html", "blog/index.html")

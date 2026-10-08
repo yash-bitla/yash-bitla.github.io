@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "_project.html" import project_card %}
+{% block title %}Projects · {{ site.name }}{% endblock %}
+{% block content %}
+<section>
+  <h1>Projects</h1>
+  <div class="projects">
+    {% for project in site.projects %}{{ project_card(project) }}{% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -19,6 +19,24 @@ python build.py --serve     # http://localhost:8000, rebuilds when a file change
 | Layout | `templates/` |
 | Colors and fonts | `static/style.css` |
 
+## Add a project
+
+Add a `[[projects]]` block to `site.toml`, above the others, and put its image in `static/img/`:
+
+```toml
+[[projects]]
+name = "Project name"
+image = "/img/project.png"
+image_alt = "What the image shows"
+image_fit = "cover"            # or "contain" for a chart that must not be cropped
+url = "https://github.com/yash-bitla/project"
+summary = "What it is, in one or two sentences."
+result = "The main measured result."
+stack = "Python · Tool · Tool"
+```
+
+The grid adjusts to the number of projects. The home page shows the first 6. With more than 6, the site also builds `/projects/` with the full list.
+
 ## Write a post
 
 Add a file to `content/posts/`. The file name becomes the URL: `hybrid-search.md` is served at `/blog/hybrid-search/`.

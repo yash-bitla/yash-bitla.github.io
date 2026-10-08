@@ -1,0 +1,13 @@
+{% macro project_card(project) %}
+<a class="project" href="{{ project.url }}">
+  {% if project.image %}
+  <div class="shot {{ project.image_fit }}"{% if project.image_ratio %} style="aspect-ratio: {{ project.image_ratio }}"{% endif %}><img src="{{ project.image }}" alt="{{ project.image_alt }}" loading="lazy"></div>
+  {% endif %}
+  <div class="body">
+    <h3>{{ project.name }} <span aria-hidden="true">↗</span></h3>
+    <p>{{ project.summary }}</p>
+    <p class="result">{{ project.result }}</p>
+    <p class="meta">{{ project.stack }}</p>
+  </div>
+</a>
+{% endmacro %}
