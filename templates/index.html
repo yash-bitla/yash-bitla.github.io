@@ -12,7 +12,7 @@
 <dl class="stats">
   {% for stat in site.stats %}
   <div>
-    <dt>{{ stat.value }}</dt>
+    <dt>{% if stat.number %}<span class="number">{{ stat.number }}</span>{% endif %}{{ stat.value }}</dt>
     <dd>{{ stat.label }}</dd>
     {% if stat.tools %}<dd class="tools">{{ stat.tools }}</dd>{% endif %}
   </div>
