@@ -22,7 +22,7 @@ tools = "TypeScript · Python · PostgreSQL · AWS · Kubernetes"
 [[stats]]
 number = "<50 ms"
 value = "Applied machine learning"
-label = "p99 latency for real-time model serving, behind recommendation systems in production."
+label = "Working on problems in personalization, recommendation systems, and LLM inference - building a GPT-based recommendation model for healthcare content recommendation."
 tools = "PyTorch · Databricks · MLflow · PySpark"
 
 [[stats]]
