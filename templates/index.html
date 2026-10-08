@@ -45,10 +45,15 @@
   <div class="projects">
     {% for project in site.projects %}
     <a class="project" href="{{ project.url }}">
-      <h3>{{ project.name }} <span aria-hidden="true">↗</span></h3>
-      <p>{{ project.summary }}</p>
-      <p class="result">{{ project.result }}</p>
-      <p class="meta">{{ project.stack }}</p>
+      {% if project.image %}
+      <div class="shot {{ project.image_fit }}"><img src="{{ project.image }}" alt="{{ project.image_alt }}" loading="lazy"></div>
+      {% endif %}
+      <div class="body">
+        <h3>{{ project.name }} <span aria-hidden="true">↗</span></h3>
+        <p>{{ project.summary }}</p>
+        <p class="result">{{ project.result }}</p>
+        <p class="meta">{{ project.stack }}</p>
+      </div>
     </a>
     {% endfor %}
   </div>

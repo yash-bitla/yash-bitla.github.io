@@ -64,6 +64,9 @@ summary = "Built an asynchronous monitoring system with Kubernetes and RabbitMQ 
 
 [[projects]]
 name = "Hybrid Retrieval Engine"
+image = "/img/scifact-rerank.png"
+image_alt = "Chart of ranking quality against latency for two rerankers at four depths"
+image_fit = "contain"
 url = "https://github.com/yash-bitla/hybrid-retrieval-engine"
 summary = "A search engine built in stages (BM25, dense retrieval, fusion, reranking, pruning), with benchmarks of what each stage adds in quality and costs in latency."
 result = "Rank fusion did not beat dense retrieval on either dataset, and neither reranker was worth its cost. MaxScore pruning returned the same results up to 9.6 times faster."
@@ -71,6 +74,9 @@ stack = "Python · NumPy · Numba · FAISS"
 
 [[projects]]
 name = "Drone Coverage Planner"
+image = "/img/drone-demo.gif"
+image_alt = "Animated replay of a four-drone coverage plan with flight lanes and a schedule chart"
+image_fit = "cover"
 url = "https://github.com/yash-bitla/drone-coverage-planner"
 summary = "Plans routes and charging schedules for a fleet of battery-limited drones that map an area around obstacles."
 result = "Plans finish about 41% sooner than the DARP + STC approach it replaces, on 60 seeded instances, and an independent validator checks every plan."
