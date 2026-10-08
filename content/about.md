@@ -2,4 +2,4 @@ I'm a **software engineer** who builds **large-scale healthcare systems** and th
 
 I work at the **intersection of AI and software engineering**: production ML, recommendation systems, low-latency inference, and data pipelines that stay correct at scale. What I care about most is turning a model into a product that people depend on.
 
-I also did **computer vision and AI research** at USC's Integrated Media Systems Center (IMSC), where I published two papers on object detection in real-world street video. I have a Master's in Computer Science from USC.
+I'm also part of the Integrated Media Systems Center (IMSC) lab at USC, where my **computer vision and AI research** is concentrated on object detection and object tracking in real-world street video. I have a Master's in Computer Science from USC.
