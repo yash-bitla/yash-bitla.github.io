@@ -16,9 +16,9 @@
   <header class="site-header">
     <a class="site-name" href="/">{{ site.name }}</a>
     <nav>
-      <a href="/#experience">Experience</a>
-      <a href="/#projects">Projects</a>
-      {% if posts %}<a href="/writing/">Writing</a>{% endif %}
+      <a href="/experience/"{% if page == "experience" %} aria-current="page"{% endif %}>Experience</a>
+      <a href="/projects/"{% if page == "projects" %} aria-current="page"{% endif %}>Projects</a>
+      {% if posts %}<a href="/writing/"{% if page == "writing" %} aria-current="page"{% endif %}>Writing</a>{% endif %}
       <a href="/#contact">Contact</a>
     </nav>
   </header>

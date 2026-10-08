@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_macros.html" import job_item %}
+{% block title %}Experience · {{ site.name }}{% endblock %}
+{% block content %}
+<header class="page-head">
+  <h1>Experience</h1>
+  <p>Where I have worked, what I published, and where I studied.</p>
+</header>
+
+<section class="row">
+  <h2>Work</h2>
+  <ol class="timeline">
+    {% for job in site.experience %}{{ job_item(job) }}{% endfor %}
+  </ol>
+</section>
+
+<section class="row">
+  <h2>Research</h2>
+  <ul class="plain">
+    {% for paper in site.publications %}
+    <li>
+      <a class="paper" href="{{ paper.url }}">{{ paper.title }}</a>
+      <span class="meta">{{ paper.authors }}. {{ paper.venue }}.</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="row">
+  <h2>Education</h2>
+  <ul class="plain rows">
+    {% for school in site.education %}
+    <li>
+      <span><strong>{{ school.school }}</strong><br><span class="meta">{{ school.degree }}</span></span>
+      <span class="meta">{{ school.dates }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

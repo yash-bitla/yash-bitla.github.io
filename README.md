@@ -9,6 +9,15 @@ python3.12 -m venv .venv && source .venv/bin/activate && pip install -r requirem
 python build.py --serve     # http://localhost:8000
 ```
 
+## Pages
+
+| Page | Template | Shows |
+|---|---|---|
+| `/` | `templates/index.html` | Introduction, three numbers, current role, project cards, latest posts |
+| `/experience/` | `templates/experience.html` | All roles, research, education |
+| `/projects/` | `templates/projects.html` | Each project with its findings |
+| `/writing/` | `templates/writing.html` | All posts (built when one exists) |
+
 ## Change it
 
 | To change | Edit |

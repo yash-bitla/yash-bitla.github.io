@@ -79,13 +79,15 @@ def build(drafts: bool = False) -> None:
         html = env.get_template(template).render(site=site, posts=posts, **context)
         target.write_text(html, encoding="utf-8")
 
-    render("index.html", "index.html", about=about)
+    render("index.html", "index.html", about=about, page="home")
+    render("experience.html", "experience/index.html", page="experience")
+    render("projects.html", "projects/index.html", page="projects")
     render("404.html", "404.html")
     if posts:
-        render("writing.html", "writing/index.html")
+        render("writing.html", "writing/index.html", page="writing")
         render("feed.xml", "feed.xml")
         for post in posts:
-            render("post.html", f"writing/{post.slug}/index.html", post=post)
+            render("post.html", f"writing/{post.slug}/index.html", post=post, page="writing")
     print(f"built {len(posts)} post(s) into {DIST}")
 
 

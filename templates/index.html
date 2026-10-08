@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import job_item, project_card %}
 {% block content %}
 <section class="hero">
   <div class="hero-text">
@@ -18,79 +19,44 @@
   {% endfor %}
 </dl>
 
-<section id="experience">
-  <h2>Experience</h2>
-  <ol class="timeline">
-    {% for job in site.experience %}
-    <li class="{{ 'current' if job.current }}">
-      <div class="when">{{ job.dates }}</div>
-      <h3><a href="{{ job.url }}">{{ job.company }}</a></h3>
-      <p class="meta">{{ job.role }} · {{ job.place }}</p>
-      <p>{{ job.summary }}</p>
-      {% if job.highlights %}
-      <ul>
-        {% for item in job.highlights %}<li>{{ item|safe }}</li>{% endfor %}
-      </ul>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ol>
+<section class="row">
+  <h2>Now</h2>
+  <div>
+    <ol class="timeline">
+      {{ job_item(site.experience[0], full=false) }}
+    </ol>
+    <p class="more"><a href="/experience/">Full experience, research and education →</a></p>
+  </div>
 </section>
 
-<section id="projects">
+<section class="row">
   <h2>Projects</h2>
-  <div class="projects">
-    {% for project in site.projects %}
-    <a class="project" href="{{ project.url }}">
-      <h3>{{ project.name }} <span aria-hidden="true">↗</span></h3>
-      <p>{{ project.summary }}</p>
-      <p class="result">{{ project.result }}</p>
-      <p class="meta">{{ project.stack }}</p>
-    </a>
-    {% endfor %}
+  <div>
+    <div class="projects two">
+      {% for project in site.projects %}{{ project_card(project) }}{% endfor %}
+    </div>
+    <p class="more"><a href="/projects/">What each project found →</a></p>
   </div>
 </section>
 
 {% if posts %}
-<section id="writing">
+<section class="row">
   <h2>Writing</h2>
-  <ul class="post-list">
-    {% for post in posts[:5] %}
-    <li>
-      <a href="/writing/{{ post.slug }}/">{{ post.title }}</a>
-      <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
-    </li>
-    {% endfor %}
-  </ul>
-  {% if posts|length > 5 %}<p><a href="/writing/">All posts</a></p>{% endif %}
+  <div>
+    <ul class="post-list">
+      {% for post in posts[:5] %}
+      <li>
+        <a href="/writing/{{ post.slug }}/">{{ post.title }}</a>
+        <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
+      </li>
+      {% endfor %}
+    </ul>
+    {% if posts|length > 5 %}<p class="more"><a href="/writing/">All posts →</a></p>{% endif %}
+  </div>
 </section>
 {% endif %}
 
-<section id="research">
-  <h2>Research</h2>
-  <ul class="plain">
-    {% for paper in site.publications %}
-    <li>
-      <a class="paper" href="{{ paper.url }}">{{ paper.title }}</a>
-      <span class="meta">{{ paper.authors }}. {{ paper.venue }}.</span>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <ul class="plain rows">
-    {% for school in site.education %}
-    <li>
-      <span><strong>{{ school.school }}</strong><br><span class="meta">{{ school.degree }}</span></span>
-      <span class="meta">{{ school.dates }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section id="contact">
+<section class="row" id="contact">
   <h2>Contact</h2>
   <p>
     The best way to reach me is <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
