@@ -12,6 +12,19 @@ url = "https://github.com/yash-bitla"
 label = "LinkedIn"
 url = "https://linkedin.com/in/yash-bitla"
 
+# Short facts under the photo.
+[[facts]]
+label = "Now"
+value = "Software engineer in healthtech"
+
+[[facts]]
+label = "Research"
+value = "Computer vision, USC IMSC"
+
+[[facts]]
+label = "Education"
+value = "M.S. Computer Science, USC"
+
 [[experience]]
 company = "Age Bold"
 url = "https://www.agebold.com"

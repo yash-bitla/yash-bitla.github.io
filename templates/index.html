@@ -6,7 +6,20 @@
     <h1>Hi, I'm Yash.</h1>
     {{ about }}
   </div>
-  <img class="portrait" src="{{ site.photo }}" alt="Portrait of {{ site.name }}" width="640" height="640">
+  <aside class="hero-side">
+    <img class="portrait" src="{{ site.photo }}" alt="Portrait of {{ site.name }}" width="640" height="640">
+    <div class="side-card">
+      <dl class="facts">
+        {% for fact in site.facts %}
+        <div><dt>{{ fact.label }}</dt><dd>{{ fact.value }}</dd></div>
+        {% endfor %}
+      </dl>
+      <p class="side-links">
+        {% for link in site.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+        <a href="mailto:{{ site.email }}">Email</a>
+      </p>
+    </div>
+  </aside>
 </section>
 
 <section id="experience">
