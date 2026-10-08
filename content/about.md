@@ -1,4 +1,4 @@
-I'm a software engineer with a strong foundation in AI and a background that spans both production engineering and academic research. I have a passion for building products that sit at the intersection of AI, software engineering, and real-world impact, where a good model meets fast, reliable, production-ready code.
+I'm a software engineer with a strong foundation in AI and a background that spans both shipping software at scale and published computer vision research. I have a passion for building products that sit at the intersection of AI, software engineering, and real-world impact, where a good model meets fast, reliable, production-ready code.
 
 After earning my M.S. in Computer Science from the University of Southern California, with internships in fintech and computer vision along the way, I joined a healthtech company, where I have worked as a software engineer for more than 2 years. There, I design and build scalable backend systems and the real-time ML services behind recommendations that personalize preventive care for Medicare members.
 
