@@ -12,21 +12,18 @@ url = "https://github.com/yash-bitla"
 label = "LinkedIn"
 url = "https://linkedin.com/in/yash-bitla"
 
-# Three skill areas under the introduction, each with one number.
+# Three skill areas under the introduction.
 [[stats]]
-number = "2M / hour"
 value = "Backend and data systems"
-label = "Records through pipelines I built, with the services and monitoring that keep them reliable."
+label = "Backend services that process millions of records, with the monitoring that keeps them reliable."
 tools = "TypeScript · Python · PostgreSQL · AWS · Kubernetes"
 
 [[stats]]
-number = "<50 ms"
 value = "Applied machine learning"
-label = "Working on problems in personalization, recommendation systems, and LLM inference - building a GPT-based recommendation model for healthcare content recommendation."
+label = "Personalization, recommendation systems, and LLM inference, including a GPT-based model that recommends healthcare content."
 tools = "PyTorch · Databricks · MLflow · PySpark"
 
 [[stats]]
-number = "2 papers"
 value = "Computer vision"
 label = "Published research on object detection and tracking in real-world video."
 tools = "PyTorch · IEEE ICIP 2023 · BIC 2024"
