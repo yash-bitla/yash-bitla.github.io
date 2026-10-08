@@ -32,6 +32,7 @@ class Post:
     date: date
     summary: str
     draft: bool
+    category: str
     html: Markup
 
 
@@ -57,6 +58,7 @@ def load_post(path: Path) -> Post:
         date=date.fromisoformat(meta["date"]),
         summary=meta["summary"],
         draft=meta.get("draft", "false").lower() == "true",
+        category=meta.get("category", "Engineering"),
         html=Markup(html),
     )
 

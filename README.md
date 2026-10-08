@@ -46,6 +46,7 @@ Add a file to `content/posts/`. The file name becomes the URL: `hybrid-search.md
 title: The title
 date: 2026-10-08
 summary: One sentence for the post list and link previews.
+category: Engineering        # or Personal. The label appears next to the date.
 draft: true
 ---
 

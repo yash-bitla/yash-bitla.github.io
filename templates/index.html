@@ -56,7 +56,7 @@
     {% for post in posts[:5] %}
     <li>
       <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
-      <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
+      <time datetime="{{ post.date.isoformat() }}">{{ post.category }} · {{ post.date.strftime("%b %Y") }}</time>
     </li>
     {% endfor %}
   </ul>

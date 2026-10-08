@@ -7,7 +7,7 @@
     {% for post in posts %}
     <li>
       <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
-      <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
+      <time datetime="{{ post.date.isoformat() }}">{{ post.category }} · {{ post.date.strftime("%b %Y") }}</time>
       <p>{{ post.summary }}</p>
     </li>
     {% endfor %}
