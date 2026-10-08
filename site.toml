@@ -12,22 +12,6 @@ url = "https://github.com/yash-bitla"
 label = "LinkedIn"
 url = "https://linkedin.com/in/yash-bitla"
 
-# Three skill areas under the introduction.
-[[stats]]
-value = "Backend and data systems"
-label = "Backend services that process millions of records, with the monitoring that keeps them reliable."
-tools = "TypeScript · Python · PostgreSQL · AWS · Kubernetes"
-
-[[stats]]
-value = "Applied machine learning"
-label = "Personalization, recommendation systems, and LLM inference, including a GPT-based model that recommends healthcare content."
-tools = "PyTorch · Databricks · MLflow · PySpark"
-
-[[stats]]
-value = "Computer vision"
-label = "Published research on object detection and tracking in real-world video."
-tools = "PyTorch · IEEE ICIP 2023 · BIC 2024"
-
 [[experience]]
 company = "Age Bold"
 url = "https://www.agebold.com"
