@@ -62,13 +62,6 @@ url = "https://github.com/yash-bitla/hybrid-retrieval-engine"
 summary = "A search engine built in stages (BM25, dense retrieval, fusion, reranking, pruning), with benchmarks of what each stage adds in quality and costs in latency."
 result = "Rank fusion did not beat dense retrieval on either dataset, and neither reranker was worth its cost. MaxScore pruning returned the same results up to 9.6 times faster."
 stack = "Python · NumPy · Numba · FAISS"
-details = [
-  "Dense retrieval beat BM25 on both datasets, by 0.05 and 0.17 nDCG@10.",
-  "Rank fusion (RRF) was equal to dense retrieval on one dataset and significantly worse on the other. A tuned weighted fusion was better on both, by a small margin.",
-  "Two cross-encoder rerankers cost 28 to 240 times the latency for no significant gain.",
-  "MaxScore pruning returned the same BM25 results 2.5 to 9.6 times faster, and the gain grew with corpus size.",
-  "Every comparison uses a paired bootstrap test, and the fusion weight is tuned on training queries only.",
-]
 
 [[projects]]
 name = "Drone Coverage Planner"
@@ -76,13 +69,6 @@ url = "https://github.com/yash-bitla/drone-coverage-planner"
 summary = "Plans routes and charging schedules for a fleet of battery-limited drones that map an area around obstacles."
 result = "Plans finish about 41% sooner than the DARP + STC approach it replaces, on 60 seeded instances, and an independent validator checks every plan."
 stack = "Python · Numba · FastAPI · React"
-details = [
-  "A route-first, cluster-second pipeline: one coverage tour of the whole area, cut into battery-feasible flights, then scheduled across drones and charging pads.",
-  "A dynamic program makes the cut optimal for a given tour, and the tests check it against brute force.",
-  "A visibility graph over inflated obstacles gives exact shortest paths around buildings.",
-  "An independent validator checks coverage, range, clearance, timing and charging for all 360 benchmark plans.",
-  "Ships as a Python library, a CLI, a FastAPI service and a React app that replays the plan.",
-]
 
 [[publications]]
 title = "Monitoring Urban Streets Using Deep Learning with Geo-Referenced Images"
