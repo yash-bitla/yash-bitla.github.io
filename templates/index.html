@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <h1>Hi, I'm Yash.</h1>
+  {{ about }}
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  {% for project in site.projects %}
+  <article class="project">
+    <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+    <p>{{ project.summary }}</p>
+    <p class="result">{{ project.result }}</p>
+    <p class="meta">{{ project.stack }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+{% if posts %}
+<section id="writing">
+  <h2>Writing</h2>
+  <ul class="post-list">
+    {% for post in posts[:5] %}
+    <li>
+      <a href="/writing/{{ post.slug }}/">{{ post.title }}</a>
+      <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if posts|length > 5 %}<p><a href="/writing/">All posts</a></p>{% endif %}
+</section>
+{% endif %}
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    The best way to reach me is <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    I'm also on
+    {% for link in site.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} and {% endif %}{% endfor %}.
+  </p>
+</section>
+{% endblock %}
