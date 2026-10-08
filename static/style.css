@@ -133,10 +133,16 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .timeline h3 a:hover { text-decoration: underline; }
 .timeline p { margin: 0.5rem 0 0; }
 .timeline p.meta { margin-top: 0; }
-.timeline ul { margin: 0.9rem 0 0; padding-left: 1.1rem; font-size: 0.95em; }
-.timeline ul li { margin-bottom: 0.6rem; }
-.timeline ul li::marker { color: var(--muted); }
-.timeline strong { font-family: var(--sans); font-size: 0.92em; }
+.highlights { margin-top: 1rem; border-bottom: 1px solid var(--rule); }
+.highlights details { border-top: 1px solid var(--rule); }
+.highlights summary { display: flex; align-items: baseline; gap: 0.9rem; padding: 0.6rem 0; cursor: pointer; list-style: none; font-family: var(--sans); }
+.highlights summary::-webkit-details-marker { display: none; }
+.highlights summary::before { content: "+"; flex: none; width: 0.9rem; color: var(--accent); font-weight: 600; }
+.highlights details[open] summary::before { content: "–"; }
+.highlights .h-title { flex: none; font-size: 0.95rem; font-weight: 600; }
+.highlights .h-note { margin-left: auto; font-size: 0.82rem; color: var(--muted); text-align: right; }
+.highlights summary:hover .h-title { color: var(--accent); }
+.highlights details p { margin: 0 0 0.9rem 1.8rem; font-size: 0.95em; }
 
 .projects { display: grid; gap: 1rem; }
 .project {
@@ -213,6 +219,9 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .site-header { padding-bottom: 2.5rem; }
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
   .hero-side { order: -1; align-items: flex-start; }
+  .highlights summary { flex-wrap: wrap; gap: 0 0.9rem; }
+  .highlights .h-note { flex-basis: 100%; margin-left: 1.8rem; text-align: left; }
+  .highlights details p { margin-left: 0; }
   .portrait { width: 120px; height: 120px; margin-top: 0; }
   .hero-side { flex-direction: row; align-items: center; gap: 1.5rem; }
   .logos { flex-direction: row; gap: 12px; }

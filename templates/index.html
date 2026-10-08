@@ -26,9 +26,14 @@
       <p class="meta">{{ job.role }} · {{ job.place }}</p>
       <p>{{ job.summary }}</p>
       {% if job.highlights %}
-      <ul>
-        {% for item in job.highlights %}<li>{{ item|safe }}</li>{% endfor %}
-      </ul>
+      <div class="highlights">
+        {% for item in job.highlights %}
+        <details>
+          <summary><span class="h-title">{{ item.title }}</span><span class="h-note">{{ item.note }}</span></summary>
+          <p>{{ item.text }}</p>
+        </details>
+        {% endfor %}
+      </div>
       {% endif %}
     </li>
     {% endfor %}
