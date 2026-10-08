@@ -12,18 +12,21 @@ url = "https://github.com/yash-bitla"
 label = "LinkedIn"
 url = "https://linkedin.com/in/yash-bitla"
 
-# Three numbers under the introduction.
+# Three skill areas under the introduction.
 [[stats]]
-value = "2+ years"
-label = "building production data and ML systems"
+value = "Backend and data systems"
+label = "Pipelines and services that process millions of records an hour, with the monitoring that keeps them reliable."
+tools = "TypeScript · Python · PostgreSQL · AWS · Kubernetes"
 
 [[stats]]
-value = "3 companies"
-label = "in healthcare, fintech and computer vision"
+value = "Applied machine learning"
+label = "Recommendation systems and real-time model serving, from training data to inference under 50 ms."
+tools = "PyTorch · Databricks · MLflow · PySpark"
 
 [[stats]]
-value = "2 papers"
-label = "published, at IEEE ICIP 2023 and BIC 2024"
+value = "Computer vision"
+label = "Object detection and tracking on real-world video, with two published papers."
+tools = "PyTorch · IEEE ICIP 2023 · BIC 2024"
 
 [[experience]]
 company = "Age Bold"
