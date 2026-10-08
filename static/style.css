@@ -6,7 +6,6 @@
   --accent: #1f5fbf;
   --heading: #1f5fbf;
   --code-bg: #f1efea;
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -33,9 +32,9 @@ body {
   max-width: 920px;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--serif);
-  font-size: 18px;
-  line-height: 1.65;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -217,7 +216,7 @@ th { color: var(--muted); font-weight: 600; }
 blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--rule); color: var(--muted); }
 
 @media (max-width: 700px) {
-  body { font-size: 17px; }
+  body { font-size: 16px; }
   h1 { font-size: 1.7rem; }
   .site-header { padding-bottom: 2.5rem; }
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
