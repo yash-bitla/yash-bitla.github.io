@@ -19,9 +19,9 @@ role = "Software Engineer"
 dates = "Sep 2024 – Present"
 place = "Los Angeles"
 current = true
-summary = "I own the healthcare data platform and built the company's first ML serving stack. The work covers the full loop: data in, predictions out, and member feedback back into the models."
+summary = "I own the company's core backend platform and built its first ML serving stack. The work covers the full loop: ingestion at scale, real-time predictions, and member feedback back into the models."
 highlights = [
-  "<strong>Data platform.</strong> Primary engineering owner of the platform that ingests enrollment, billing and claims data from national health plans. I took ingestion from 90K to 2M records an hour by fixing N+1 queries, memory leaks and oversized transaction batches.",
+  "<strong>Backend platform.</strong> Primary engineering owner of the large-scale backend system that ingests and processes enrollment, billing and claims data from national health plans. I scaled its throughput from 90K to 2M records an hour by removing N+1 queries, memory leaks and oversized transaction batches.",
   "<strong>ML serving.</strong> Built a real-time recommendation pipeline and a low-latency inference service for 177K active members. Feature lookups run concurrently in the request path, which keeps p99 under 50 ms.",
   "<strong>Personalization.</strong> Replaced static browsing with a daily plan generated from each member's progress and health outcomes, and a feedback system that lets members switch or skip classes. Class completion nearly doubled, from 21% to 37%.",
   "<strong>Outcomes reporting.</strong> Automated monthly HIPAA-compliant reporting across 7 national health plans, and an assessment platform that captures 3.2M member submissions a year.",
