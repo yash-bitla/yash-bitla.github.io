@@ -1,20 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="intro">
-  <h1>Hi, I'm Yash.</h1>
-  {{ about }}
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Software engineer · ML systems</p>
+    <h1>Hi, I'm Yash.</h1>
+    {{ about }}
+  </div>
+  <img class="portrait" src="{{ site.photo }}" alt="Portrait of {{ site.name }}" width="640" height="640">
+</section>
+
+<dl class="stats">
+  {% for stat in site.stats %}
+  <div>
+    <dt>{{ stat.value }}</dt>
+    <dd>{{ stat.label }}</dd>
+  </div>
+  {% endfor %}
+</dl>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ol class="timeline">
+    {% for job in site.experience %}
+    <li class="{{ 'current' if job.current }}">
+      <div class="when">{{ job.dates }}</div>
+      <h3>{{ job.company }}</h3>
+      <p class="meta">{{ job.role }} · {{ job.place }}</p>
+      <p>{{ job.summary }}</p>
+      {% if job.highlights %}
+      <ul>
+        {% for item in job.highlights %}<li>{{ item|safe }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-  {% for project in site.projects %}
-  <article class="project">
-    <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
-    <p>{{ project.summary }}</p>
-    <p class="result">{{ project.result }}</p>
-    <p class="meta">{{ project.stack }}</p>
-  </article>
-  {% endfor %}
+  <div class="projects">
+    {% for project in site.projects %}
+    <a class="project" href="{{ project.url }}">
+      <h3>{{ project.name }} <span aria-hidden="true">↗</span></h3>
+      <p>{{ project.summary }}</p>
+      <p class="result">{{ project.result }}</p>
+      <p class="meta">{{ project.stack }}</p>
+    </a>
+    {% endfor %}
+  </div>
 </section>
 
 {% if posts %}
@@ -31,6 +65,30 @@
   {% if posts|length > 5 %}<p><a href="/writing/">All posts</a></p>{% endif %}
 </section>
 {% endif %}
+
+<section id="research">
+  <h2>Research</h2>
+  <ul class="plain">
+    {% for paper in site.publications %}
+    <li>
+      <strong>{{ paper.title }}</strong>
+      <span class="meta">{{ paper.authors }}. {{ paper.venue }}.</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="plain rows">
+    {% for school in site.education %}
+    <li>
+      <span><strong>{{ school.school }}</strong><br><span class="meta">{{ school.degree }}</span></span>
+      <span class="meta">{{ school.dates }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
 <section id="contact">
   <h2>Contact</h2>

@@ -1,7 +1,8 @@
 name = "Yash Bitla"
 url = "https://yashbitla.com"
-tagline = "Software engineer working on ML systems and backend infrastructure."
+tagline = "Software engineer working on ML systems and large-scale data platforms."
 email = "yashbitla1999@gmail.com"
+photo = "/yash.jpg"
 
 [[links]]
 label = "GitHub"
@@ -11,16 +12,77 @@ url = "https://github.com/yash-bitla"
 label = "LinkedIn"
 url = "https://linkedin.com/in/yash-bitla"
 
+# Three numbers under the introduction.
+[[stats]]
+value = "2M"
+label = "records an hour through the ingestion pipeline I re-architected, up from 90K"
+
+[[stats]]
+value = "<50 ms"
+label = "p99 latency for the inference service I built, at 99.9% uptime"
+
+[[stats]]
+value = "11M+"
+label = "Medicare members whose enrollment data the platform connects to care"
+
+[[experience]]
+company = "Age Bold"
+role = "Software Engineer"
+dates = "Sep 2024 – Present"
+place = "Los Angeles"
+current = true
+summary = "I own the healthcare data platform and built the company's first ML serving stack. The work covers the full loop: data in, predictions out, and member feedback back into the models."
+highlights = [
+  "<strong>Data platform.</strong> Primary engineering owner of the platform that ingests enrollment, billing and claims data from national health plans. I took ingestion from 90K to 2M records an hour by fixing N+1 queries, memory leaks and oversized transaction batches.",
+  "<strong>ML serving.</strong> Built a real-time recommendation pipeline and a low-latency inference service for 177K active members. Feature lookups run concurrently in the request path, which keeps p99 under 50 ms.",
+  "<strong>Personalization.</strong> Replaced static browsing with a daily plan generated from each member's progress and health outcomes, and a feedback system that lets members switch or skip classes. Class completion nearly doubled, from 21% to 37%.",
+  "<strong>Outcomes reporting.</strong> Automated monthly HIPAA-compliant reporting across 7 national health plans, and an assessment platform that captures 3.2M member submissions a year.",
+]
+
+[[experience]]
+company = "Dragonfruit AI"
+role = "Software Engineer Intern"
+dates = "Mar 2024 – Aug 2024"
+place = "Menlo Park"
+summary = "Improved the alert notification system with Celery and RabbitMQ to process and analyze 10,000 false-positive alerts, and built REST APIs with per-client configuration for real-time alert processing."
+
+[[experience]]
+company = "SoFi (Galileo Financial Technologies)"
+role = "Software Engineer Intern"
+dates = "May 2023 – Aug 2023"
+place = "San Francisco"
+summary = "Built an asynchronous monitoring system with Kubernetes and RabbitMQ that captures metrics for a fraud detection service processing 100,000 ACH transactions a day, with no added latency. Also shipped a real-time analytics dashboard on Splunk and DynamoDB."
+
 [[projects]]
 name = "Hybrid Retrieval Engine"
 url = "https://github.com/yash-bitla/hybrid-retrieval-engine"
 summary = "A search engine built in stages (BM25, dense retrieval, fusion, reranking, pruning), with benchmarks of what each stage adds in quality and costs in latency."
 result = "Rank fusion did not beat dense retrieval on either dataset, and neither reranker was worth its cost. MaxScore pruning returned the same results up to 9.6 times faster."
-stack = "Python, NumPy, Numba, FAISS"
+stack = "Python · NumPy · Numba · FAISS"
 
 [[projects]]
 name = "Drone Coverage Planner"
 url = "https://github.com/yash-bitla/drone-coverage-planner"
 summary = "Plans routes and charging schedules for a fleet of battery-limited drones that map an area around obstacles."
 result = "Plans finish about 41% sooner than the DARP + STC approach it replaces, on 60 seeded instances, and an independent validator checks every plan."
-stack = "Python, Numba, FastAPI, React"
+stack = "Python · Numba · FastAPI · React"
+
+[[publications]]
+title = "Monitoring Urban Streets Using Deep Learning with Geo-Referenced Images"
+authors = "Yash Bitla, Harshita Poojary, Seon Ho Kim"
+venue = "8th International Conference on Big Data, IoT, and Cloud Computing (BIC 2024), Hanoi"
+
+[[publications]]
+title = "Object Detection and Counting Challenges in Real Street Monitoring: Case Study of Homeless Encampments"
+authors = "Yash Bitla, Abdullah Alfarrarjeh, Seon Ho Kim, Utkarsh Baranwal"
+venue = "IEEE International Conference on Image Processing (ICIP 2023)"
+
+[[education]]
+school = "University of Southern California"
+degree = "M.S. in Computer Science"
+dates = "2022 – 2023"
+
+[[education]]
+school = "University of Mumbai"
+degree = "B.E. in Computer Science"
+dates = "2017 – 2021"

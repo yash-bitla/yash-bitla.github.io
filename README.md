@@ -14,7 +14,8 @@ python build.py --serve     # http://localhost:8000
 | To change | Edit |
 |---|---|
 | The text at the top of the home page | `content/about.md` |
-| Projects, links, email | `site.toml` |
+| Experience, projects, research, education, the three numbers, links | `site.toml` |
+| The photo | `static/yash.jpg` (square) |
 | Layout | `templates/` |
 | Colors and fonts | `static/style.css` |
 
