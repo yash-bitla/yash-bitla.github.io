@@ -4,6 +4,7 @@
   --muted: #6b6963;
   --rule: #e4e1da;
   --accent: #1f5fbf;
+  --heading: #0f4c81;
   --code-bg: #f1efea;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -17,6 +18,7 @@
     --muted: #9a978f;
     --rule: #2e2d2a;
     --accent: #7fb0f5;
+    --heading: #8fd3c8;
     --code-bg: #1f1f1d;
   }
 }
@@ -28,7 +30,7 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 680px;
+  max-width: 800px;
   background: var(--bg);
   color: var(--text);
   font-family: var(--serif);
@@ -50,7 +52,10 @@ h2 {
   padding-top: 1.25rem;
   border-top: 1px solid var(--rule);
 }
-h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
+h3 { font-size: 1.15rem; margin: 0 0 0.35rem; color: var(--heading); }
+
+main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.meta, .eyebrow, .stats dd, .post-list li, .plain li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 
 .site-header, .site-footer {
   display: flex;
@@ -73,7 +78,7 @@ h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
   color: var(--muted);
 }
 
-.hero { display: grid; grid-template-columns: 1fr 168px; gap: 2.5rem; align-items: start; }
+.hero { display: grid; grid-template-columns: 1fr 184px; gap: 3rem; align-items: start; }
 .hero p:last-child { margin-bottom: 0; }
 .eyebrow {
   margin: 0 0 0.6rem;
@@ -84,8 +89,8 @@ h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
   color: var(--accent);
 }
 .portrait {
-  width: 168px;
-  height: 168px;
+  width: 184px;
+  height: 184px;
   margin-top: 0.4rem;
   border-radius: 50%;
   object-fit: cover;
@@ -128,8 +133,8 @@ h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
 }
 .timeline .when { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.2rem; }
 .timeline h3 { margin-bottom: 0.1rem; }
-.timeline h3 a { color: var(--text); text-decoration: none; }
-.timeline h3 a:hover { color: var(--accent); text-decoration: underline; }
+.timeline h3 a { color: var(--heading); text-decoration: none; }
+.timeline h3 a:hover { text-decoration: underline; }
 .timeline p { margin: 0.5rem 0 0; }
 .timeline p.meta { margin-top: 0; }
 .timeline ul { margin: 0.9rem 0 0; padding-left: 1.1rem; font-size: 0.95em; }
@@ -158,8 +163,9 @@ h3 { font-size: 1.15rem; margin: 0 0 0.35rem; }
 .plain li { margin-bottom: 1.1rem; }
 .plain li:last-child { margin-bottom: 0; }
 .plain strong, .plain .paper { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; }
-.plain .paper { color: var(--text); text-decoration: none; }
-.plain .paper:hover { color: var(--accent); text-decoration: underline; }
+.plain .paper, .plain strong { color: var(--heading); }
+.plain .paper { text-decoration: none; }
+.plain .paper:hover { text-decoration: underline; }
 .plain > li > .meta { display: block; margin-top: 0.15rem; line-height: 1.5; }
 .plain.rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 
@@ -213,6 +219,8 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .stats div { display: grid; grid-template-columns: 6.2rem 1fr; align-items: baseline; gap: 0.75rem; }
   .stats dt { font-size: 1.35rem; }
   .stats dd { margin: 0; }
+  /* A narrow column leaves wide gaps between words when it is justified. */
+  main p, main li { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
