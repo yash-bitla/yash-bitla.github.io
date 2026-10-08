@@ -215,8 +215,10 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .hero-side { order: -1; align-items: flex-start; }
   .portrait { width: 120px; height: 120px; margin-top: 0; }
   .hero-side { flex-direction: row; align-items: center; gap: 1.5rem; }
-  .logos { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .logos { gap: 12px; }
   .logos a { height: 28px; }
+  .site-header nav { display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; }
+  .site-header nav a { margin-left: 0; }
   /* A narrow column leaves wide gaps between words when it is justified. */
   main p, main li { text-align: left; }
 }
@@ -224,4 +226,12 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
 @media (prefers-reduced-motion: reduce) {
   .project { transition: none; }
   .project:hover { transform: none; }
+}
+
+@media (max-width: 380px) {
+  .hero-side { gap: 1rem; }
+  .portrait { width: 100px; height: 100px; }
+  .logos { gap: 10px; }
+  .logos a { height: 24px; }
+  .site-header nav { font-size: 0.8rem; }
 }
