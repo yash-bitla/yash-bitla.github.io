@@ -25,7 +25,8 @@ url = "https://www.usc.edu"
 
 [[logos]]
 name = "USC Integrated Media Systems Center"
-src = "/logos/imsc.jpg"
+src = "/logos/imsc-light.png"
+src_dark = "/logos/imsc-dark.png"
 url = "https://imsc.usc.edu/"
 wide = true
 

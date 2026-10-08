@@ -10,7 +10,7 @@
     <img class="portrait" src="{{ site.photo }}" alt="Portrait of {{ site.name }}" width="640" height="640">
     <ul class="logos">
       {% for logo in site.logos %}
-      <li><a href="{{ logo.url }}" title="{{ logo.name }}"{% if logo.wide %} class="wide"{% endif %}><img src="{{ logo.src }}" alt="{{ logo.name }}"></a></li>
+      <li><a href="{{ logo.url }}" title="{{ logo.name }}"{% if logo.wide %} class="wide"{% endif %}><picture>{% if logo.src_dark %}<source srcset="{{ logo.src_dark }}" media="(prefers-color-scheme: dark)">{% endif %}<img src="{{ logo.src }}" alt="{{ logo.name }}"></picture></a></li>
       {% endfor %}
     </ul>
   </aside>

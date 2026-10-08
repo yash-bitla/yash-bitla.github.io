@@ -101,14 +101,11 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 }
 
 .hero-side { display: flex; flex-direction: column; align-items: center; gap: 1.75rem; }
-.logos { display: flex; justify-content: center; align-items: center; gap: 10px; list-style: none; margin: 0; padding: 0; }
-.logos a { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; background: #fff; overflow: hidden; border: 1px solid var(--rule); transition: transform 0.15s; }
-.logos a.wide { width: 108px; padding: 0 4px; }
+.logos { display: flex; justify-content: center; align-items: center; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.logos a { display: block; height: 34px; transition: transform 0.15s; }
 .logos a:hover { transform: translateY(-2px); }
-.logos img { display: block; max-width: 100%; max-height: 100%; }
-.logos a:not(.wide) img { width: 100%; height: 100%; object-fit: cover; }
-.logos a[href*="agebold"] { background: transparent; border-color: transparent; }
-.logos a[href*="agebold"] img { width: 100%; height: 100%; object-fit: contain; }
+.logos picture { display: block; height: 100%; }
+.logos img { display: block; height: 100%; width: auto; border-radius: 6px; }
 
 
 .timeline { list-style: none; margin: 0; padding: 0 0 0 1.5rem; border-left: 1px solid var(--rule); }
@@ -217,7 +214,9 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
   .hero-side { order: -1; align-items: flex-start; }
   .portrait { width: 120px; height: 120px; margin-top: 0; }
-  .hero-side { gap: 1rem; }
+  .hero-side { flex-direction: row; align-items: center; gap: 1.5rem; }
+  .logos { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .logos a { height: 28px; }
   /* A narrow column leaves wide gaps between words when it is justified. */
   main p, main li { text-align: left; }
 }
