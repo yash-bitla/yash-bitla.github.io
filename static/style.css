@@ -215,11 +215,9 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   h1 { font-size: 1.7rem; }
   .site-header { padding-bottom: 2.5rem; }
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero-side { order: -1; flex-direction: row; align-items: center; gap: 1.5rem; }
-  .portrait { width: 120px; height: 120px; margin-top: 0; flex: none; }
-  .facts { padding-top: 0; border-top: 0; }
-  .facts div { margin-bottom: 0.6rem; }
-  .side-links { padding-top: 0.6rem; }
+  .hero-side { order: -1; align-items: flex-start; }
+  .portrait { width: 120px; height: 120px; margin-top: 0; }
+  .side-card { display: none; }
   /* A narrow column leaves wide gaps between words when it is justified. */
   main p, main li { text-align: left; }
 }
