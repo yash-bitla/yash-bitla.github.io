@@ -166,7 +166,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   text-decoration: none;
   transition: border-color 0.15s, transform 0.15s;
 }
-.project:hover { border-color: var(--accent); transform: translateY(-2px); }
+.project:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
 .project h3 span { color: var(--muted); font-weight: 400; transition: color 0.15s; }
 .project:hover h3 span { color: var(--accent); }
 .project .body { padding: 1.2rem 1.35rem 1.3rem; }
