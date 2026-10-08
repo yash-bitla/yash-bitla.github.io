@@ -21,7 +21,7 @@ python build.py --serve     # http://localhost:8000
 
 ## Write a post
 
-Add a file to `content/posts/`. The file name becomes the URL: `hybrid-search.md` is served at `/writing/hybrid-search/`.
+Add a file to `content/posts/`. The file name becomes the URL: `hybrid-search.md` is served at `/blog/hybrid-search/`.
 
 ```markdown
 ---
@@ -34,7 +34,7 @@ draft: true
 The post, in Markdown. Code blocks, tables and footnotes work.
 ```
 
-A post with `draft: true` is left out of the build. Use `python build.py --serve --drafts` to preview it. The Writing section and the feed appear when the first post is published.
+A post with `draft: true` is left out of the build. Use `python build.py --serve --drafts` to preview it. The Blog section and the feed appear when the first post is published.
 
 ## Deploy
 

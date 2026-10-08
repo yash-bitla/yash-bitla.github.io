@@ -9,8 +9,8 @@
   {% for post in posts %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ site.url }}/writing/{{ post.slug }}/"/>
-    <id>{{ site.url }}/writing/{{ post.slug }}/</id>
+    <link href="{{ site.url }}/blog/{{ post.slug }}/"/>
+    <id>{{ site.url }}/blog/{{ post.slug }}/</id>
     <updated>{{ post.date.isoformat() }}T00:00:00Z</updated>
     <summary>{{ post.summary }}</summary>
     <content type="html">{{ post.html }}</content>

@@ -53,17 +53,17 @@
 </section>
 
 {% if posts %}
-<section id="writing">
-  <h2>Writing</h2>
+<section id="blog">
+  <h2>Blog</h2>
   <ul class="post-list">
     {% for post in posts[:5] %}
     <li>
-      <a href="/writing/{{ post.slug }}/">{{ post.title }}</a>
+      <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
       <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
     </li>
     {% endfor %}
   </ul>
-  {% if posts|length > 5 %}<p><a href="/writing/">All posts</a></p>{% endif %}
+  {% if posts|length > 5 %}<p><a href="/blog/">All posts</a></p>{% endif %}
 </section>
 {% endif %}
 

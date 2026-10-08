@@ -82,10 +82,10 @@ def build(drafts: bool = False) -> None:
     render("index.html", "index.html", about=about)
     render("404.html", "404.html")
     if posts:
-        render("writing.html", "writing/index.html")
+        render("blog.html", "blog/index.html")
         render("feed.xml", "feed.xml")
         for post in posts:
-            render("post.html", f"writing/{post.slug}/index.html", post=post)
+            render("post.html", f"blog/{post.slug}/index.html", post=post)
     print(f"built {len(posts)} post(s) into {DIST}")
 
 

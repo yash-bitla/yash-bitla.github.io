@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Writing · {{ site.name }}{% endblock %}
+{% block title %}Blog · {{ site.name }}{% endblock %}
 {% block content %}
 <section>
-  <h1>Writing</h1>
+  <h1>Blog</h1>
   <ul class="post-list with-summary">
     {% for post in posts %}
     <li>
-      <a href="/writing/{{ post.slug }}/">{{ post.title }}</a>
+      <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
       <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime("%b %Y") }}</time>
       <p>{{ post.summary }}</p>
     </li>
