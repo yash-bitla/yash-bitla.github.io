@@ -7,6 +7,10 @@
   --heading: #1f5fbf;
   --code-bg: #f1efea;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fs-title: 1.08rem;   /* names: companies, projects, papers, schools, posts */
+  --fs-body: 1rem;       /* all running text */
+  --fs-small: 0.85rem;   /* dates, roles, tools, notes, menu */
+  --fs-label: 0.8rem;    /* section labels in capitals */
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
@@ -37,13 +41,15 @@ body {
   line-height: 1.7;
 }
 
-a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { text-decoration-thickness: 2px; }
+a { color: var(--accent); text-decoration: none; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration: underline; }
+/* Inside a blog post, links stay underlined so they are visible in long text. */
+.post p a, .post li a { text-decoration: underline; }
 
 h1, h2, h3 { font-family: var(--sans); line-height: 1.25; letter-spacing: -0.01em; }
 h1 { font-size: 2rem; margin: 0 0 1rem; }
 h2 {
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
@@ -51,7 +57,7 @@ h2 {
   padding-top: 1.25rem;
   border-top: 1px solid var(--rule);
 }
-h3 { font-size: 1.15rem; margin: 0 0 0.35rem; color: var(--heading); }
+h3 { font-size: var(--fs-title); margin: 0 0 0.35rem; color: var(--heading); }
 
 main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .meta, .eyebrow, .post-list li, .plain li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
@@ -63,7 +69,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   flex-wrap: wrap;
   gap: 0.5rem 1.25rem;
   font-family: var(--sans);
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
 }
 .site-header { padding: 2rem 0 3.5rem; }
 .site-header nav a, .site-footer a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; }
@@ -85,7 +91,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .eyebrow {
   margin: 0 0 0.6rem;
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -127,7 +133,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   border-color: var(--accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
 }
-.timeline .when { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.2rem; }
+.timeline .when { font-family: var(--sans); font-size: var(--fs-small); color: var(--muted); margin-bottom: 0.2rem; }
 .timeline h3 { margin-bottom: 0.1rem; }
 .timeline h3 a { color: var(--heading); text-decoration: none; }
 .timeline h3 a:hover { text-decoration: underline; }
@@ -139,15 +145,15 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .highlights summary::-webkit-details-marker { display: none; }
 .highlights summary::before { content: "+"; flex: none; width: 0.9rem; color: var(--accent); font-weight: 600; }
 .highlights details[open] summary::before { content: "–"; }
-.highlights .h-title { flex: none; font-size: 0.95rem; font-weight: 600; }
-.highlights .h-note { margin-left: auto; font-size: 0.82rem; color: var(--muted); text-align: right; }
+.highlights .h-title { flex: none; font-size: var(--fs-body); font-weight: 600; }
+.highlights .h-note { margin-left: auto; font-size: var(--fs-small); color: var(--muted); text-align: right; }
 .highlights summary:hover .h-title { color: var(--accent); }
-.highlights details p { margin: 0 0 0.9rem 1.8rem; font-size: 0.95em; }
+.highlights details p { margin: 0 0 0.9rem 1.8rem; font-size: var(--fs-body); }
 
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 /* With an odd number of cards, the first one takes the full width, so no card is alone in a row. */
 .projects .project:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
-.more { margin: 1.5rem 0 0; font-family: var(--sans); font-size: 0.9rem; text-align: left; }
+.more { margin: 1.5rem 0 0; font-family: var(--sans); font-size: var(--fs-small); text-align: left; }
 .more a { text-decoration: none; }
 .more a:hover { text-decoration: underline; }
 .project {
@@ -169,21 +175,21 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .project .shot.cover img { object-fit: cover; }
 .project .shot.contain img { object-fit: contain; }
 .project:hover .shot img { transform: scale(1.03); }
-.project p { margin: 0 0 0.6rem; font-size: 0.93em; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.project p { margin: 0 0 0.6rem; font-size: var(--fs-body); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 .project p:last-child { margin-bottom: 0; }
 .project .result { padding-left: 0.9rem; border-left: 2px solid var(--accent); }
 
 .plain { list-style: none; margin: 0; padding: 0; }
 .plain li { margin-bottom: 1.1rem; }
 .plain li:last-child { margin-bottom: 0; }
-.plain strong, .plain .paper { font-family: var(--sans); font-size: 0.95rem; font-weight: 600; }
+.plain strong, .plain .paper { font-family: var(--sans); font-size: var(--fs-title); font-weight: 600; }
 .plain .paper, .plain strong { color: var(--heading); }
 .plain .paper { text-decoration: none; }
 .plain .paper:hover { text-decoration: underline; }
 .plain > li > .meta { display: block; margin-top: 0.15rem; line-height: 1.5; }
 .plain.rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 
-.meta, time { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+.meta, time { font-family: var(--sans); font-size: var(--fs-small); color: var(--muted); }
 
 .post-list { list-style: none; padding: 0; margin: 0; }
 .post-list li {
@@ -195,6 +201,8 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   margin-bottom: 0.75rem;
 }
 .post-list.with-summary li { margin-bottom: 1.75rem; }
+.post-list a { font-size: var(--fs-title); font-weight: 600; color: var(--heading); text-decoration: none; }
+.post-list a:hover { text-decoration: underline; }
 .post-list p { flex-basis: 100%; margin: 0.25rem 0 0; color: var(--muted); }
 
 .post header { margin-bottom: 2.5rem; }
@@ -212,7 +220,9 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .post img { display: block; max-width: 100%; height: auto; margin: 1.75rem auto; border-radius: 8px; border: 1px solid var(--rule); }
 .post table { margin: 1.5rem 0; }
 .post li { margin-bottom: 0.4rem; }
-.back { margin-top: 3rem; font-family: var(--sans); font-size: 0.9rem; }
+.back { margin-top: 3rem; font-family: var(--sans); font-size: var(--fs-small); }
+.back a { text-decoration: none; }
+.back a:hover { text-decoration: underline; }
 
 code, pre { font-family: var(--mono); font-size: 0.85em; }
 code { background: var(--code-bg); padding: 0.1em 0.3em; border-radius: 3px; }
