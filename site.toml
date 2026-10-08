@@ -23,6 +23,7 @@ summary = "I own the company's core backend platform and built its first ML serv
 highlights = [
   "<strong>Backend platform.</strong> Primary engineering owner of the large-scale backend system that ingests and processes enrollment, billing and claims data from national health plans. I scaled its throughput from 90K to 2M records an hour by removing N+1 queries, memory leaks and oversized transaction batches.",
   "<strong>ML serving.</strong> Built a real-time recommendation pipeline and a low-latency inference service for 177K active members. Feature lookups run concurrently in the request path, which keeps p99 under 50 ms.",
+  "<strong>Recommendation model.</strong> Worked on a GPT-based recommendation model that predicts each member's next class from their activity history: extending its inputs from 9 to 17 feature streams, with content and member-capability signals to improve cold-start recommendations, and building an offline evaluation harness that compares model versions on Recall@10 and MRR with confidence intervals.",
   "<strong>Personalization.</strong> Replaced static browsing with a daily plan generated from each member's progress and health outcomes, and a feedback system that lets members switch or skip classes. Class completion nearly doubled, from 21% to 37%.",
   "<strong>Outcomes reporting.</strong> Automated monthly HIPAA-compliant reporting across 7 national health plans, and an assessment platform that captures 3.2M member submissions a year.",
 ]
