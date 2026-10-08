@@ -12,18 +12,22 @@ url = "https://github.com/yash-bitla"
 label = "LinkedIn"
 url = "https://linkedin.com/in/yash-bitla"
 
-# Short facts under the photo.
-[[facts]]
-label = "Now"
-value = "Software engineer in healthtech"
+# Logos under the photo, in this order.
+[[logos]]
+name = "Age Bold"
+src = "/logos/agebold.svg"
+url = "https://www.agebold.com"
 
-[[facts]]
-label = "Research"
-value = "Computer vision, USC IMSC"
+[[logos]]
+name = "University of Southern California"
+src = "/logos/usc.png"
+url = "https://www.usc.edu"
 
-[[facts]]
-label = "Education"
-value = "M.S. Computer Science, USC"
+[[logos]]
+name = "USC Integrated Media Systems Center"
+src = "/logos/imsc.jpg"
+url = "https://imsc.usc.edu/"
+wide = true
 
 [[experience]]
 company = "Age Bold"
