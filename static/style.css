@@ -101,7 +101,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 }
 
 .hero-side { display: flex; flex-direction: column; align-items: center; gap: 1.75rem; }
-.logos { display: flex; justify-content: center; align-items: center; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.logos { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; list-style: none; margin: 0; padding: 0; }
 .logos a { display: block; height: 34px; transition: transform 0.15s; }
 .logos a:hover { transform: translateY(-2px); }
 .logos picture { display: block; height: 100%; }
@@ -215,7 +215,7 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .hero-side { order: -1; align-items: flex-start; }
   .portrait { width: 120px; height: 120px; margin-top: 0; }
   .hero-side { flex-direction: row; align-items: center; gap: 1.5rem; }
-  .logos { gap: 12px; }
+  .logos { flex-direction: row; gap: 12px; }
   .logos a { height: 28px; }
   .site-header nav { display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; }
   .site-header nav a { margin-left: 0; }
