@@ -175,7 +175,8 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .project .shot.cover img { object-fit: cover; }
 .project .shot.contain img { object-fit: contain; }
 .project:hover .shot img { transform: scale(1.03); }
-.project p { margin: 0 0 0.6rem; font-size: var(--fs-body); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.project p { margin: 0 0 0.6rem; font-size: var(--fs-body); text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.project p.meta { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 .project p:last-child { margin-bottom: 0; }
 .project .result { padding-left: 0.9rem; border-left: 2px solid var(--accent); }
 
