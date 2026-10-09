@@ -2,7 +2,6 @@
 title: In 2020 we gave every drone an equal share of the map. That was the mistake.
 date: 2026-10-09
 summary: I rebuilt a hackathon project six years later and benchmarked it against the original. Planning one route first and splitting it afterwards finished 41% sooner.
-draft: true
 ---
 
 In 2020, my team built a drone route planner for a hackathon. The problem came from ISRO: given an area to map, a fleet of drones, their battery range, and the locations of charging stations, plan the routes so that the whole area is photographed in the shortest time.
