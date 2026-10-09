@@ -188,6 +188,8 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .plain .paper:hover { text-decoration: underline; }
 .plain > li > .meta { display: block; margin-top: 0.15rem; line-height: 1.5; }
 .plain.rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+/* A date stays on one line. The name beside it wraps instead. */
+.plain.rows li > .meta, .post-list time, .timeline .when { white-space: nowrap; flex: none; }
 
 .meta, time { font-family: var(--sans); font-size: var(--fs-small); color: var(--muted); }
 
@@ -251,8 +253,6 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .logos a { height: 28px; }
   .site-header nav { display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; }
   .site-header nav a { margin-left: 0; }
-  /* A narrow column leaves wide gaps between words when it is justified. */
-  main p, main li { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
