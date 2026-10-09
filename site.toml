@@ -64,12 +64,22 @@ summary = "Built an asynchronous monitoring system with Kubernetes and RabbitMQ 
 
 # Projects, newest first. The home page shows the first 6. With more than 6, the site
 # also builds /projects/ with the full list. Give each one an image in static/img/.
+# The image area is 16:9. `image_fit` is "cover" (fill and crop) or "contain" (show all).
+[[projects]]
+name = "Event Discovery Service"
+image = "/img/event-discovery-load.png"
+image_alt = "Chart of requests served against requests sent: with the Redis cache the service serves all 1,200 a second, and without it the service stops near 600"
+image_fit = "contain"
+url = "https://github.com/yash-bitla/event-discovery-service"
+summary = "A backend service that finds events near a location. It copies them from an API with a daily quota and a rate limit, and it keeps answering when that API fails."
+result = "Ingestion stayed inside a quota of 5,000 calls a day with none rejected, and restarted 3.3 minutes after an outage instead of 33. With a Redis cache the API served 1,200 requests a second at a P95 of 11.5 ms, on one laptop."
+stack = "Python · FastAPI · PostgreSQL + PostGIS · Redis · Docker"
+
 [[projects]]
 name = "leantrack"
-image = "/img/leantrack-demo.gif"
-image_alt = "Two views of people tracked on a street: boxes lag behind in a blocking loop, and stay on the people with a background detector"
+image = "/img/leantrack-live.gif"
+image_alt = "People tracked on a street at night: with a background detector and optical flow, each box stays on its person"
 image_fit = "cover"
-image_ratio = "844 / 262"
 url = "https://github.com/yash-bitla/leantrack"
 summary = "A multi-object tracking runtime that treats the detector as a limited resource. It decides when the detector runs, keeps each track correct between runs, and measures the accuracy cost of each decision."
 result = "On a live stream, a background detector with optical flow cut mean output latency from 101 ms to 5 ms and raised tracking accuracy (HOTA) from 32.9 to 34.5, on MOT17 with a laptop CPU."
