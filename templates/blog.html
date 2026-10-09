@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Blog · {{ site.name }}{% endblock %}
 {% block content %}
-<section>
+{% set categories = posts | map(attribute="category") | unique | list %}
+<section class="blog">
   <h1>Blog</h1>
+  {% if categories | length > 1 %}
+  {# The filter needs no script. A selected radio button hides the posts of the other categories. #}
+  <style>
+    {% for category in categories %}
+    #filter-{{ category | lower }}:checked ~ .post-list li:not([data-category="{{ category }}"]) { display: none; }
+    {% endfor %}
+  </style>
+  <input class="filter-input" type="radio" name="filter" id="filter-all" checked>
+  {% for category in categories %}
+  <input class="filter-input" type="radio" name="filter" id="filter-{{ category | lower }}">
+  {% endfor %}
+  <div class="filters" role="group" aria-label="Filter posts by category">
+    <label for="filter-all">All <span>{{ posts | length }}</span></label>
+    {% for category in categories %}
+    <label for="filter-{{ category | lower }}">{{ category }} <span>{{ posts | selectattr("category", "equalto", category) | list | length }}</span></label>
+    {% endfor %}
+  </div>
+  {% endif %}
   <ul class="post-list with-summary">
     {% for post in posts %}
-    <li>
+    <li data-category="{{ post.category }}">
       <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
       <time datetime="{{ post.date.isoformat() }}">{{ post.category }} · {{ post.date.strftime("%b %Y") }}</time>
       <p>{{ post.summary }}</p>
