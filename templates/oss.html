@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Open Source · {{ site.name }}{% endblock %}
+{% block description %}Open-source contributions by {{ site.name }}.{% endblock %}
+{% macro span(days) %}{% if days == 0 %}same day{% elif days == 1 %}1 day{% else %}{{ days }} days{% endif %}{% endmacro %}
+{% block content %}
+<section class="oss">
+  <h1>Open Source</h1>
+  <p>Contributions to open-source projects, newest first. Each entry links the pull request, the issue it closes, and the time from pull request to merge.</p>
+
+  {# The toggle needs no script. The selected radio button hides the other view, as on the blog page. #}
+  <input class="filter-input" type="radio" name="oss-view" id="view-merged" checked>
+  <input class="filter-input" type="radio" name="oss-view" id="view-active">
+  <div class="filters" role="group" aria-label="Show merged or in-progress contributions">
+    <label for="view-merged">Merged <span>{{ oss.merged | length }}</span></label>
+    <label for="view-active">In progress <span>{{ oss.active | length }}</span></label>
+  </div>
+
+  <div class="oss-view oss-merged">
+    {% if oss.merged %}
+    <ol class="timeline">
+      {% for c in oss.merged %}
+      <li class="current">
+        <div class="when">Merged {{ c.merged | day }}</div>
+        <h3><a href="{{ c.url }}">{{ c.repo }}</a></h3>
+        <p class="meta">Pull request #{{ c.number }}{% if c.language %} · {{ c.language }}{% endif %} · {{ c.stars | stars }} stars</p>
+        <p>{{ c.note or c.title }}</p>
+        {% if c.issue %}<p class="result">Closes <a href="{{ c.issue.url }}">#{{ c.issue.number }}</a>: {{ c.issue.title }}</p>{% endif %}
+        <ol class="lifecycle" aria-label="Lifecycle">
+          {% if c.issue and c.issue.opened %}<li><span>Issue</span><time datetime="{{ c.issue.opened }}">{{ c.issue.opened | day_short }}</time></li>{% endif %}
+          <li><span>Pull request</span><time datetime="{{ c.opened }}">{{ c.opened | day_short }}</time></li>
+          <li class="done"><span>Merged</span><time datetime="{{ c.merged }}">{{ c.merged | day_short }} · {{ span(c.days_to_merge) }}</time></li>
+        </ol>
+        <p class="meta diffstat"><span class="add">+{{ c.additions }}</span> <span class="del">−{{ c.deletions }}</span>
+          <span class="blocks" aria-hidden="true">{% for b in c.blocks %}<i class="{{ b }}"></i>{% endfor %}</span></p>
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="meta">No merged contributions yet.</p>
+    {% endif %}
+  </div>
+
+  <div class="oss-view oss-active">
+    {% if oss.active %}
+    <ul class="post-list with-summary">
+      {% for a in oss.active %}
+      <li>
+        <a href="{{ a.url }}">{{ a.repo }} #{{ a.number }}</a>
+        <time datetime="{{ a.opened }}">{% if a.kind == "PR" %}Pull request in review{% else %}Issue discussion{% endif %} · since {{ a.opened | day_short }}</time>
+        <p>{{ a.note or a.title }}{% if a.issue %} · for issue <a class="inline" href="{{ a.issue.url }}">#{{ a.issue.number }}</a>{% endif %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="meta">Nothing in progress.</p>
+    {% endif %}
+  </div>
+
+  <p class="meta oss-updated">Data from GitHub, updated {{ oss.updated }}.</p>
+</section>
+{% endblock %}

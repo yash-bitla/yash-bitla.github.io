@@ -131,3 +131,14 @@ dates = "2022 – 2023"
 school = "University of Mumbai"
 degree = "B.E. in Computer Science"
 dates = "2017 – 2021"
+
+# Open source page (/oss/). Data comes from GitHub at build time.
+[oss]
+# Threads to leave off the page: dropped or not my work.
+hide = [
+  "https://github.com/vllm-project/guidellm/issues/1531",
+]
+# Optional one-line summaries that replace the pull request title:
+# [[oss.notes]]
+# url = "https://github.com/OWNER/REPO/pull/N"
+# summary = "What the change does, in one sentence."

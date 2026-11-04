@@ -17,6 +17,8 @@ from functools import partial
 from pathlib import Path
 
 import markdown
+
+import oss
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
@@ -72,6 +74,9 @@ def build(drafts: bool = False) -> None:
         loader=FileSystemLoader(ROOT / "templates"),
         autoescape=select_autoescape(["html", "xml"]),
     )
+    env.filters["day"] = lambda iso: date.fromisoformat(iso).strftime("%b %-d, %Y")
+    env.filters["day_short"] = lambda iso: date.fromisoformat(iso).strftime("%b %-d")
+    env.filters["stars"] = lambda n: f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
     about = Markup(markdown.markdown((ROOT / "content" / "about.md").read_text(encoding="utf-8")))
 
     if DIST.exists():
@@ -88,6 +93,7 @@ def build(drafts: bool = False) -> None:
     if len(site["projects"]) > HOME_PROJECTS:
         render("projects.html", "projects/index.html", home_projects=HOME_PROJECTS)
     render("404.html", "404.html")
+    render("oss.html", "oss/index.html", oss=oss.load(ROOT, site.get("oss", {})))
     if posts:
         render("blog.html", "blog/index.html")
         render("feed.xml", "feed.xml")

@@ -1,0 +1,108 @@
+{
+ "active": [
+  {
+   "additions": 253,
+   "deletions": 1,
+   "issue": {
+    "number": 1032,
+    "opened": "2026-10-27",
+    "title": "Support argument files with argparse-style fromfile_prefix_chars",
+    "url": "https://github.com/BrianPugh/cyclopts/issues/1032"
+   },
+   "kind": "PR",
+   "language": "Python",
+   "merged": null,
+   "note": "",
+   "number": 1043,
+   "opened": "2026-11-04",
+   "repo": "BrianPugh/cyclopts",
+   "stars": 1290,
+   "title": "feat: add App.argfile_prefix to read CLI arguments from files",
+   "url": "https://github.com/BrianPugh/cyclopts/pull/1043"
+  },
+  {
+   "additions": 375,
+   "deletions": 11,
+   "issue": {
+    "number": 4105,
+    "opened": "2026-10-23",
+    "title": "[Enh]: implement `{Expr,Series}.approx_quantile` in Narwhals",
+    "url": "https://github.com/narwhals-dev/narwhals/issues/4105"
+   },
+   "kind": "PR",
+   "language": "Python",
+   "merged": null,
+   "note": "",
+   "number": 4121,
+   "opened": "2026-10-31",
+   "repo": "narwhals-dev/narwhals",
+   "stars": 1746,
+   "title": "feat: add `{Expr,Series}.approx_quantile`",
+   "url": "https://github.com/narwhals-dev/narwhals/pull/4121"
+  },
+  {
+   "additions": 139,
+   "deletions": 20,
+   "issue": {
+    "number": 1636,
+    "opened": "2026-10-04",
+    "title": "procrastinate_fetch_job_v2 incredibly slow (~20sec) with 10,000 jobs with null lock - with suggested fix",
+    "url": "https://github.com/procrastinate-org/procrastinate/issues/1636"
+   },
+   "kind": "PR",
+   "language": "Python",
+   "merged": null,
+   "note": "",
+   "number": 1643,
+   "opened": "2026-10-14",
+   "repo": "procrastinate-org/procrastinate",
+   "stars": 1442,
+   "title": "Skip the lock subquery for NULL-lock jobs in procrastinate_fetch_job_v2",
+   "url": "https://github.com/procrastinate-org/procrastinate/pull/1643"
+  },
+  {
+   "kind": "Issue",
+   "language": "Python",
+   "note": "",
+   "number": 1034,
+   "opened": "2026-10-30",
+   "repo": "BrianPugh/cyclopts",
+   "stars": 1290,
+   "title": "Env prefix by shared config",
+   "url": "https://github.com/BrianPugh/cyclopts/issues/1034"
+  },
+  {
+   "kind": "Issue",
+   "language": "Python",
+   "note": "",
+   "number": 1025,
+   "opened": "2026-10-23",
+   "repo": "janbjorge/pgqueuer",
+   "stars": 1548,
+   "title": "A dead LISTEN connection is never restored while QueueManager.run goes on, so cancels of running jobs are lost",
+   "url": "https://github.com/janbjorge/pgqueuer/issues/1025"
+  }
+ ],
+ "merged": [
+  {
+   "additions": 75,
+   "deletions": 2,
+   "issue": {
+    "number": 1028,
+    "opened": "2026-10-25",
+    "title": "support for generic type aliases used for annotations",
+    "url": "https://github.com/BrianPugh/cyclopts/issues/1028"
+   },
+   "kind": "PR",
+   "language": "Python",
+   "merged": "2026-10-26",
+   "note": "",
+   "number": 1031,
+   "opened": "2026-10-26",
+   "repo": "BrianPugh/cyclopts",
+   "stars": 1290,
+   "title": "fix: resolve subscripted generic type aliases (#1028)",
+   "url": "https://github.com/BrianPugh/cyclopts/pull/1031"
+  }
+ ]
+}

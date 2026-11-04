@@ -203,9 +203,28 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 /* The label of the selected radio button is the active one. */
 #filter-all:checked ~ .filters label[for="filter-all"],
 #filter-engineering:checked ~ .filters label[for="filter-engineering"],
-#filter-personal:checked ~ .filters label[for="filter-personal"] { color: var(--bg); background: var(--heading); border-color: var(--heading); }
+#filter-personal:checked ~ .filters label[for="filter-personal"],
+#view-merged:checked ~ .filters label[for="view-merged"],
+#view-active:checked ~ .filters label[for="view-active"] { color: var(--bg); background: var(--heading); border-color: var(--heading); }
 .filter-input:focus-visible ~ .filters { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 999px; }
 .post-list { list-style: none; padding: 0; margin: 0; }
+
+/* Open source page. The selected toggle hides the other view. */
+#view-merged:checked ~ .oss-active, #view-active:checked ~ .oss-merged { display: none; }
+.oss .result { margin: 0.6rem 0 0; padding-left: 0.9rem; border-left: 2px solid var(--accent); }
+.oss .result a, .post-list p a.inline { font-size: inherit; font-weight: 400; color: var(--accent); }
+.lifecycle { display: flex; flex-wrap: wrap; list-style: none; margin: 0.9rem 0 0; padding: 0; font-family: var(--sans); font-size: var(--fs-small); }
+.lifecycle li { position: relative; display: flex; flex-direction: column; padding: 0 1.6rem 0 0; color: var(--muted); }
+.lifecycle li span { color: var(--text); font-weight: 600; }
+.lifecycle li:not(:last-child)::after { content: "→"; position: absolute; right: 0.45rem; top: 0; color: var(--muted); }
+.lifecycle li.done span { color: var(--accent); }
+.diffstat { margin: 0.6rem 0 0; display: flex; align-items: center; gap: 0.5rem; }
+.diffstat .add { color: #1a7f37; } .diffstat .del { color: #cf222e; }
+.blocks { display: inline-flex; gap: 2px; }
+.blocks i { width: 8px; height: 8px; border-radius: 1px; background: var(--rule); }
+.blocks i.add { background: #2da44e; } .blocks i.del { background: #cf222e; }
+.oss-updated { margin-top: 3rem; }
+.site-header nav .short { display: none; }
 .post-list li {
   display: flex;
   justify-content: space-between;
@@ -265,6 +284,8 @@ blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid var(--
   .logos a { height: 28px; }
   .site-header nav { display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; }
   .site-header nav a { margin-left: 0; }
+  .site-header nav .long { display: none; }
+  .site-header nav .short { display: inline; }
 }
 
 @media (prefers-reduced-motion: reduce) {
