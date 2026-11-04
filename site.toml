@@ -32,22 +32,27 @@ wide = true
 
 [[experience]]
 company = "Age Bold"
+about = "Series A digital health startup, backed by a16z and Khosla Ventures"
 url = "https://www.agebold.com"
 role = "Software Engineer"
 dates = "Sep 2024 – Present"
 place = "Los Angeles"
 current = true
-summary = "I own the company's core backend platform and built its first ML serving stack. The work covers the full loop: ingestion at scale, real-time predictions, and member feedback back into the models."
+summary = "I lead Bold's health plan integrations and built its first production ML serving stack. The work covers the full loop: partner data in at scale, real-time eligibility and predictions, and member feedback back into the models."
 highlights = [
-  { title = "Backend platform", note = "90K → 2M records an hour", text = "Primary engineering owner of the large-scale backend system that ingests and processes enrollment, billing and claims data from national health plans. I scaled its throughput from 90K to 2M records an hour by removing N+1 queries, memory leaks and oversized transaction batches." },
-  { title = "ML serving", note = "under 50 ms p99 for 177K members", text = "Built a real-time recommendation pipeline and a low-latency inference service for 177K active members. Feature lookups run concurrently in the request path, which keeps p99 under 50 ms." },
-  { title = "Recommendation model", note = "GPT-based, with cold-start signals", text = "Worked on a GPT-based recommendation model that predicts each member's next class from their activity history. I created feature signals from each member's kinesiology profile, which became the baseline for a member capability signal, and built a matching feature stream for content that describes what each class involves and how intense it is. The model can now compare what a class demands with what a member can do, which improves recommendations for new members with no history. The recommendation pipeline it powers raised member engagement by more than 30%." },
-  { title = "Personalization", note = "class completion 21% → 37%", text = "Replaced static browsing with a daily plan generated from each member's progress and health outcomes, and a feedback system that lets members switch or skip classes. Class completion nearly doubled, from 21% to 37%." },
-  { title = "Outcomes reporting", note = "7 health plans, 3.2M submissions a year", text = "Automated monthly HIPAA-compliant reporting across 7 national health plans, and an assessment platform that captures 3.2M member submissions a year." },
+  { title = "Health plan integrations", note = "9 national plans, 11M+ eligible members", text = "Led end-to-end integrations for 9 national health plans, about $15M in revenue and more than 11M eligible Medicare members. I scoped the technical requirements, built the secure PHI exchange with each plan, and launched each plan's custom product experience." },
+  { title = "Eligibility ingestion", note = "90K → 2M records an hour", text = "Scaled HIPAA-compliant eligibility ingestion 22x, from 90K to 2M records an hour, with batched lookups, bulk upserts and streaming parsing. This unblocked the onboarding of Kaiser Permanente, Bold's largest national health plan contract." },
+  { title = "Signup eligibility engine", note = "15 health plans, under 2 s at p95", text = "Designed the real-time signup eligibility engine. It verifies coverage across 15 health plans in under 2 seconds at p95 and provisions each member's plan-specific product experience." },
+  { title = "Member lifecycle platform", note = "new partners without code changes", text = "Built the Enterprise Member Lifecycle Platform. It configures new health plan partners, tracks their status, and updates partner settings in minutes without code changes." },
+  { title = "Outcomes reporting", note = "9 health plans, under 1% variance", text = "Automated monthly outcomes and engagement reporting to 9 national health plans. Bold bills and invoices each partner against this data, with under 1% validation variance. A configurable clinical assessment platform collects 3.2M submissions a year and feeds both this reporting and ML personalization." },
+  { title = "ML serving", note = "5 models, under 50 ms p99 for 177K members", text = "Designed Bold's first production ML serving stack on MLflow, Databricks and ECS. It serves 5 personalization models across fitness and clinical plans, classes and reminders. The inference service supports 177K active members at under 50 ms p99 latency and 99.9% uptime, with concurrent feature retrieval." },
+  { title = "Personalized daily plan", note = "billable conversion +18%", text = "Replaced static browsing with an ML-generated daily plan personalized to each member's progress and health outcomes. Billable conversion rose 18% and weekly retention rose 3.5%." },
+  { title = "Class switching", note = "class completion 21% → 37%", text = "Built real-time class switching. Members can swap any class in their recommended plan, and each swap feeds back into the recommendation engine. Class completion rose from 21% to 37%." },
 ]
 
 [[experience]]
 company = "Dragonfruit AI"
+about = "Series A video AI startup"
 url = "https://www.dragonfruit.ai"
 role = "Software Engineer Intern"
 dates = "Mar 2024 – Aug 2024"
@@ -55,8 +60,8 @@ place = "Menlo Park"
 summary = "Improved the alert notification system with Celery and RabbitMQ to process and analyze 10,000 false-positive alerts, and built REST APIs with per-client configuration for real-time alert processing."
 
 [[experience]]
-company = "SoFi (Galileo Financial Technologies)"
-url = "https://www.galileo-ft.com"
+company = "SoFi Technology Solutions"
+url = "https://www.sofi.com"
 role = "Software Engineer Intern"
 dates = "May 2023 – Aug 2023"
 place = "San Francisco"

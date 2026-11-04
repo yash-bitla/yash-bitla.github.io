@@ -137,6 +137,7 @@ main p, main li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .timeline h3 { margin-bottom: 0.1rem; }
 .timeline h3 a { color: var(--heading); text-decoration: none; }
 .timeline h3 a:hover { text-decoration: underline; }
+.timeline h3 .company-note { font-size: var(--fs-small); font-weight: 600; color: var(--text); letter-spacing: 0; }
 .timeline p { margin: 0.5rem 0 0; }
 .timeline p.meta { margin-top: 0; }
 .highlights { margin-top: 1rem; border-bottom: 1px solid var(--rule); }
