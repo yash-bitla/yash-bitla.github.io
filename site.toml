@@ -137,6 +137,7 @@ dates = "2017 – 2021"
 # Threads to leave off the page: dropped or not my work.
 hide = [
   "https://github.com/vllm-project/guidellm/issues/1531",
+  "https://github.com/riverqueue/rivercla/pull/43",  # CLA signature, not a contribution
 ]
 # Optional one-line summaries that replace the pull request title:
 # [[oss.notes]]

@@ -1,7 +1,7 @@
 {
  "active": [
   {
-   "additions": 253,
+   "additions": 330,
    "deletions": 1,
    "issue": {
     "number": 1032,
@@ -16,7 +16,7 @@
    "number": 1043,
    "opened": "2026-11-04",
    "repo": "BrianPugh/cyclopts",
-   "stars": 1290,
+   "stars": 1292,
    "title": "feat: add App.argfile_prefix to read CLI arguments from files",
    "url": "https://github.com/BrianPugh/cyclopts/pull/1043"
   },
@@ -36,7 +36,7 @@
    "number": 4121,
    "opened": "2026-10-31",
    "repo": "narwhals-dev/narwhals",
-   "stars": 1746,
+   "stars": 1747,
    "title": "feat: add `{Expr,Series}.approx_quantile`",
    "url": "https://github.com/narwhals-dev/narwhals/pull/4121"
   },
@@ -56,7 +56,7 @@
    "number": 1643,
    "opened": "2026-10-14",
    "repo": "procrastinate-org/procrastinate",
-   "stars": 1442,
+   "stars": 1444,
    "title": "Skip the lock subquery for NULL-lock jobs in procrastinate_fetch_job_v2",
    "url": "https://github.com/procrastinate-org/procrastinate/pull/1643"
   },
@@ -67,7 +67,7 @@
    "number": 1034,
    "opened": "2026-10-30",
    "repo": "BrianPugh/cyclopts",
-   "stars": 1290,
+   "stars": 1292,
    "title": "Env prefix by shared config",
    "url": "https://github.com/BrianPugh/cyclopts/issues/1034"
   },
@@ -78,12 +78,32 @@
    "number": 1025,
    "opened": "2026-10-23",
    "repo": "janbjorge/pgqueuer",
-   "stars": 1548,
+   "stars": 1547,
    "title": "A dead LISTEN connection is never restored while QueueManager.run goes on, so cancels of running jobs are lost",
    "url": "https://github.com/janbjorge/pgqueuer/issues/1025"
   }
  ],
  "merged": [
+  {
+   "additions": 602,
+   "deletions": 156,
+   "issue": {
+    "number": 1579,
+    "opened": "2026-11-04",
+    "title": "Queue pause/resume is lost if sent while the notifier is reconnecting",
+    "url": "https://github.com/riverqueue/river/issues/1579"
+   },
+   "kind": "PR",
+   "language": "Go",
+   "merged": "2026-11-05",
+   "note": "",
+   "number": 1582,
+   "opened": "2026-11-04",
+   "repo": "riverqueue/river",
+   "stars": 5863,
+   "title": "Poll queue settings as a fallback when a notifier is configured",
+   "url": "https://github.com/riverqueue/river/pull/1582"
+  },
   {
    "additions": 75,
    "deletions": 2,
@@ -100,7 +120,7 @@
    "number": 1031,
    "opened": "2026-10-26",
    "repo": "BrianPugh/cyclopts",
-   "stars": 1290,
+   "stars": 1292,
    "title": "fix: resolve subscripted generic type aliases (#1028)",
    "url": "https://github.com/BrianPugh/cyclopts/pull/1031"
   }
