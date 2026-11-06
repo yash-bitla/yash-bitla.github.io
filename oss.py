@@ -117,6 +117,19 @@ def add_dates(data: dict) -> dict:
     return data
 
 
+def group_by_repo(merged: list[dict]) -> list[dict]:
+    """One entry per repository, newest merge first. Each keeps its pull requests, newest first."""
+    repos: dict[str, dict] = {}
+    for item in merged:
+        repo = repos.setdefault(item["repo"], {"repo": item["repo"], "language": item["language"],
+                                               "stars": item["stars"], "prs": []})
+        repo["prs"].append(item)
+    for repo in repos.values():
+        repo["prs"].sort(key=lambda m: m["merged"], reverse=True)
+        repo["latest"] = repo["prs"][0]["merged"]
+    return sorted(repos.values(), key=lambda r: r["latest"], reverse=True)
+
+
 def load(root: Path, config: dict) -> dict:
     """Fresh data when GitHub answers, else the cached copy. Writes the cache only when it changed."""
     cache = root / "content" / "oss.json"
@@ -133,6 +146,7 @@ def load(root: Path, config: dict) -> dict:
         data = json.loads(cache.read_text(encoding="utf-8")) if cache.exists() else {"merged": [], "active": []}
         source = "cache"
     data = add_dates(data)
+    data["merged_repos"] = group_by_repo(data["merged"])
     data["updated"] = datetime.now().strftime("%b %-d, %Y")
     data["source"] = source
     return data

@@ -1,26 +1,6 @@
 {
  "active": [
   {
-   "additions": 330,
-   "deletions": 1,
-   "issue": {
-    "number": 1032,
-    "opened": "2026-10-27",
-    "title": "Support argument files with argparse-style fromfile_prefix_chars",
-    "url": "https://github.com/BrianPugh/cyclopts/issues/1032"
-   },
-   "kind": "PR",
-   "language": "Python",
-   "merged": null,
-   "note": "",
-   "number": 1043,
-   "opened": "2026-11-04",
-   "repo": "BrianPugh/cyclopts",
-   "stars": 1292,
-   "title": "feat: add App.argfile_prefix to read CLI arguments from files",
-   "url": "https://github.com/BrianPugh/cyclopts/pull/1043"
-  },
-  {
    "additions": 375,
    "deletions": 11,
    "issue": {
@@ -85,6 +65,26 @@
  ],
  "merged": [
   {
+   "additions": 330,
+   "deletions": 1,
+   "issue": {
+    "number": 1032,
+    "opened": "2026-10-27",
+    "title": "Support argument files with argparse-style fromfile_prefix_chars",
+    "url": "https://github.com/BrianPugh/cyclopts/issues/1032"
+   },
+   "kind": "PR",
+   "language": "Python",
+   "merged": "2026-11-06",
+   "note": "",
+   "number": 1043,
+   "opened": "2026-11-04",
+   "repo": "BrianPugh/cyclopts",
+   "stars": 1292,
+   "title": "feat: add App.argfile_prefix to read CLI arguments from files",
+   "url": "https://github.com/BrianPugh/cyclopts/pull/1043"
+  },
+  {
    "additions": 602,
    "deletions": 156,
    "issue": {
@@ -100,7 +100,7 @@
    "number": 1582,
    "opened": "2026-11-04",
    "repo": "riverqueue/river",
-   "stars": 5863,
+   "stars": 5868,
    "title": "Poll queue settings as a fallback when a notifier is configured",
    "url": "https://github.com/riverqueue/river/pull/1582"
   },

@@ -17,21 +17,28 @@
 
   <div class="oss-view oss-merged">
     {% if oss.merged %}
+    {# One entry per repository. Its pull requests sit under it, newest first. #}
     <ol class="timeline">
-      {% for c in oss.merged %}
+      {% for r in oss.merged_repos %}
       <li class="current">
-        <div class="when">Merged {{ c.merged | day }}</div>
-        <h3><a href="{{ c.url }}">{{ c.repo }}</a></h3>
-        <p class="meta">Pull request #{{ c.number }}{% if c.language %} · {{ c.language }}{% endif %} · {{ c.stars | stars }} stars</p>
-        <p>{{ c.note or c.title }}</p>
-        {% if c.issue %}<p class="result">Closes <a href="{{ c.issue.url }}">#{{ c.issue.number }}</a>: {{ c.issue.title }}</p>{% endif %}
-        <ol class="lifecycle" aria-label="Lifecycle">
-          {% if c.issue and c.issue.opened %}<li><span>Issue</span><time datetime="{{ c.issue.opened }}">{{ c.issue.opened | day_short }}</time></li>{% endif %}
-          <li><span>Pull request</span><time datetime="{{ c.opened }}">{{ c.opened | day_short }}</time></li>
-          <li class="done"><span>Merged</span><time datetime="{{ c.merged }}">{{ c.merged | day_short }} · {{ span(c.days_to_merge) }}</time></li>
+        <div class="when">{% if r.prs | length > 1 %}{{ r.prs | length }} pull requests · latest merged {{ r.latest | day }}{% else %}Merged {{ r.latest | day }}{% endif %}</div>
+        <h3><a href="https://github.com/{{ r.repo }}">{{ r.repo }}</a></h3>
+        <p class="meta">{% if r.language %}{{ r.language }} · {% endif %}{{ r.stars | stars }} stars</p>
+        <ol class="repo-prs">
+          {% for c in r.prs %}
+          <li>
+            <p><a class="pr-link" href="{{ c.url }}">#{{ c.number }}</a> {{ c.note or c.title }}</p>
+            {% if c.issue %}<p class="result">Closes <a href="{{ c.issue.url }}">#{{ c.issue.number }}</a>: {{ c.issue.title }}</p>{% endif %}
+            <ol class="lifecycle" aria-label="Lifecycle">
+              {% if c.issue and c.issue.opened %}<li><span>Issue</span><time datetime="{{ c.issue.opened }}">{{ c.issue.opened | day_short }}</time></li>{% endif %}
+              <li><span>Pull request</span><time datetime="{{ c.opened }}">{{ c.opened | day_short }}</time></li>
+              <li class="done"><span>Merged</span><time datetime="{{ c.merged }}">{{ c.merged | day_short }} · {{ span(c.days_to_merge) }}</time></li>
+            </ol>
+            <p class="meta diffstat"><span class="add">+{{ c.additions }}</span> <span class="del">−{{ c.deletions }}</span>
+              <span class="blocks" aria-hidden="true">{% for b in c.blocks %}<i class="{{ b }}"></i>{% endfor %}</span></p>
+          </li>
+          {% endfor %}
         </ol>
-        <p class="meta diffstat"><span class="add">+{{ c.additions }}</span> <span class="del">−{{ c.deletions }}</span>
-          <span class="blocks" aria-hidden="true">{% for b in c.blocks %}<i class="{{ b }}"></i>{% endfor %}</span></p>
       </li>
       {% endfor %}
     </ol>
